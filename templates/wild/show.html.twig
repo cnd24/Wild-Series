@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wild Series</title>
+</head>
+<body>
+{% if slug is not empty %}
+    <h1>{{ slug }}</h1>
+    {% else %}
+        <h1> Aucune série sélectionnée, veuillez choisir une série </h1>
+{% endif %}
+
+</body>
+</html>
