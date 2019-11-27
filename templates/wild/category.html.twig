@@ -12,7 +12,8 @@
     {% else %}
         Aucune série trouvée.
     {% endfor %}
-    <a href="{{ path('app_index') }}">
-        Retour à l'accueil
-    </a>
+
+    <button type="button" class="btn btn-lg round ml-5">
+        <a href="{{ path('wild_index') }}"> Retour à l'accueil </a>
+    </button>
 {% endblock %}

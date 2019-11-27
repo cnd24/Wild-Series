@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Program;
 use App\Entity\Category;
+use App\Entity\Season;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,10 +31,10 @@ class WildController extends AbstractController
      * Getting a program with a formatted slug for title
      *
      * @param string $slug The slugger
-     * @Route("/wild/show/{slug<^[a-z0-9-]+$>}", defaults={"slug" = null}, name="wild_show")
+     * @Route("/wild/show/{slug<^[a-z0-9-]+$>}", defaults={"slug" = null}, name="show_program")
      * @return Response
      */
-    public function show(?string $slug):Response
+    public function showByProgram(?string $slug):Response
     {
         if (!$slug) {
             throw $this
@@ -46,6 +47,11 @@ class WildController extends AbstractController
         $program = $this->getDoctrine()
             ->getRepository(Program::class)
             ->findOneBy(['title' => mb_strtolower($slug)]);
+
+        $seasons = $this->getDoctrine()
+            ->getRepository(Season::class)
+            ->findBy([ 'program' => $program]);
+
         if (!$program) {
             throw $this->createNotFoundException(
                 'No program with '.$slug.' title, found in program\'s table.'
@@ -55,8 +61,31 @@ class WildController extends AbstractController
         return $this->render('wild/show.html.twig', [
             'program' => $program,
             'slug'  => $slug,
+            'seasons' => $seasons,
         ]);
     }
+
+    /**
+     * @Route("/wild/showBySeason/{id}", name="show_season")
+     */
+    public function showBySeason(int $id) :Response
+    {
+        $season = $this->getDoctrine()
+            ->getRepository(Season::class)
+            ->find($id);
+
+        $program = $season->getProgram();
+
+        $episodes = $season->getEpisodes();
+
+        return $this->render('wild/episodes.html.twig', [
+            'season' => $season,
+            'program' => $program,
+            'episodes' => $episodes,
+        ]);
+
+    }
+
 
     /**
      * @Route("/category/{categoryName}", name="show_category")
