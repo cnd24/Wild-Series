@@ -2,28 +2,22 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-
-    <div class="media">
-        <div class="media-body">
-            <h1 class="mt-0">{{ program.title }}</h1>
-           <p>{{ program.summary }}</p>
-
-            <div>
-                Saisons:{{ season.description }}
-            </div>
+    <div class="card mx-auto mt-5 w-25">
+        <div class="card-body">
+            <h5 class="card-title"> {{ season.description }} de {{ program.title }}</h5>
+            <p class="card-text"> {{ program.summary }}</p>
         </div>
+        <ul class="list-group list-group-flush">
+            {% for episode in episodes %}
+                <li class="list-group-item"> Episode {{ episode.id }} : {{ episode.title }}</li>
+            {% endfor %}
+        </ul>
     </div>
 
-    <div>
-        {% for episode in episodes %}
-            <div>{{ episode.title }}</div>
-        {% endfor %}
-    </div>
 
 
 
-    <a href="{{ path('wild_index') }}">
-        Retour à l'accueil
-    </a>
-
+    <button type="button" class="btn btn-lg round m-5">
+        <a href="{{ path('wild_index') }}"> Retour à l'accueil </a>
+    </button>
 {% endblock %}
