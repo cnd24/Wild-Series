@@ -8,9 +8,9 @@
 
             {% for program in programs %}
                 <div class="col-sm-3">
-
                     <div class="card text-center m-5">
                         <h4 class="card-header font-weight-bold "><a href="{{ path('show_program', {'slug':program.title|lower|replace({' ': '-'})}) }}">{{ program.title }}</a> </h4>
+                        <img class="align-self-center mt-2 h-25 rounded" src="{{program.poster}}" alt="{{ program.title }}">
                         <div class="card-body">
                             <p>Catégorie : {{program.category.name }}</p>
                             <p class="card-text">{{ program.summary }}</p>
