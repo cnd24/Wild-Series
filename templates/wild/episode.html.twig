@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="card mx-auto mt-5 w-25">
+        <h4 class="m-3 text-center">
+            {{ season.description }} de {{ program.title }}
+        </h4>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> Episode {{ episode.number }} : {{ episode.title }}</li>
+            <li class="list-group-item"> Synopsis {{ episode.synopsis }} </li>
+        </ul>
+    </div>
+
+
+
+    <button type="button" class="btn btn-lg round m-5">
+        <a href="{{ path('show_season', {'id': season.id}) }}">Retour à la saison</a>
+    </button>
+
+    <button type="button" class="btn btn-lg round m-5">
+        <a href="{{ path('show_program', {'slug':program.title|lower|replace({' ': '-'})}) }}">Retour à la série</a>
+    </button>
+
+    <button type="button" class="btn btn-lg round m-5">
+        <a href="{{ path('wild_index') }}">Retour à l'accueil</a>
+    </button>
+{% endblock %}
