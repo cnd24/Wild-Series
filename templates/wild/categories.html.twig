@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block body %}
+    <h1 class="ml-3">Les catégories de films : </h1>
+    {% for category in categories %}
+        <div class="ml-3">
+            <h4>{{ category.id }}. {{ category.name }} </h4>
+        </div>
+    {% else %}
+        Aucune série trouvée.
+    {% endfor %}
+
+    <div class="form-group">
+        <div class="col">
+        {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        </div>
+        <div class="col">
+        <button class="btn btn-lg round ">{{ button_label|default('Ajouter') }}</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

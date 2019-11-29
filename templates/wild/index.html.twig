@@ -6,22 +6,33 @@
     <h1 class="text-center">Toutes les séries</h1>
     <div class="row">
 
-            {% for program in programs %}
-                <div class="col-sm-3">
-                    <div class="card text-center m-5">
-                        <h4 class="card-header font-weight-bold "><a href="{{ path('show_program', {'slug':program.title|lower|replace({' ': '-'})}) }}">{{ program.title }}</a> </h4>
-                        <img class="align-self-center mt-2 h-25 rounded" src="{{program.poster}}" alt="{{ program.title }}">
-                        <div class="card-body">
-                            <p>Catégorie : {{program.category.name }}</p>
-                            <p class="card-text">{{ program.summary }}</p>
-                        </div>
+        {% for program in programs %}
+            <div class="col-sm-3">
+                <div class="card text-center m-5">
+                    <h4 class="card-header font-weight-bold "><a
+                                href="{{ path('show_program', {'slug':program.title|lower|replace({' ': '-'})}) }}">{{ program.title }}</a>
+                    </h4>
+                    <img class="align-self-center mt-2 h-25 rounded" src="{{ program.poster }}"
+                         alt="{{ program.title }}">
+                    <div class="card-body">
+                        <p>Catégorie : {{ program.category.name }}</p>
+                        <p class="card-text">{{ program.summary }}</p>
                     </div>
                 </div>
-            {% else %}
-                Aucune série trouvée.
-            {% endfor %}
-        </div>
+            </div>
+        {% else %}
+            Aucune série trouvée.
+        {% endfor %}
     </div>
+
+
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+
+
+
 
     <button type="button" class="btn btn-lg round m-5">
         <a href="{{ path('wild_index') }}"> Retour à l'accueil </a>

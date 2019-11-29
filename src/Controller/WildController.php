@@ -6,7 +6,10 @@ use App\Entity\Program;
 use App\Entity\Category;
 use App\Entity\Season;
 use App\Entity\Episode;
+use App\Form\ProgramSearchType;
+use App\Form\CategoryType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -15,7 +18,7 @@ class WildController extends AbstractController
     /**
      * @Route("/wild", name="wild_index")
      */
-    public function index() :Response
+    public function index(Request $request) :Response
     {
         $programs = $this->getDoctrine()->getRepository(Program::class)->findAll();
 
@@ -23,8 +26,21 @@ class WildController extends AbstractController
             throw $this->createNotFoundException('No program found in program\'s table.');
         }
 
+        $category = new Category();
+        $form = $this->createForm(CategoryType::class, $category);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+             $categoryManager = $this->getDoctrine()->getManager();
+            $categoryManager->persist($category);
+            $categoryManager->flush();
+
+            return $this->redirectToRoute('wild_index');
+        }
+
         return $this->render('wild/index.html.twig', [
-            'programs' => $programs
+            'programs' => $programs,
+            'form' => $form->createView(),
         ]);
     }
 
@@ -109,6 +125,7 @@ class WildController extends AbstractController
             'category'  => $category,
         ]);
     }
+
 
     /**
      * @Route("/wild/episode/{id}", name="show_episode")
