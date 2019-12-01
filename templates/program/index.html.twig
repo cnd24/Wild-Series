@@ -3,39 +3,33 @@
 {% block title %}Index des séries{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Index des séries</h1>
+    <h1 class="text-center">Toutes les séries</h1>
+    <div class="row">
 
-    <table class="table w-75 mx-auto">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Résumé</th>
-                <th>Affiche</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
         {% for program in programs %}
-            <tr>
-                <td>{{ program.id }}</td>
-                <td>{{ program.title }}</td>
-                <td>{{ program.summary }}</td>
-                <td>{{ program.poster }}</td>
-                <td>
-                    <a href="{{ path('program_show', {'id': program.id}) }}">voir</a>
-                    <a href="{{ path('program_edit', {'id': program.id}) }}">modifier</a>
-                </td>
-            </tr>
+            <div class="col-sm-3">
+                <div class="card text-center m-5">
+                    <h4 class="card-header font-weight-bold "><a
+                                href="{{ path('program_show', {'id':program.id}) }}">{{ program.title }}</a>
+                    </h4>
+                    <img class="align-self-center mt-2 h-25 rounded" src="{{ program.poster }}"
+                         alt="{{ program.title }}">
+                    <div class="card-body">
+                        <p>Catégorie : {{ program.category.name }}</p>
+                        <p class="card-text">{{ program.summary }}</p>
+                    </div>
+                    <div>
+                        <a class="m-2" href="{{ path('program_show', {'id': program.id}) }}">voir</a>
+                        <a href="{{ path('program_edit', {'id': program.id}) }}">modifier</a>
+                    </div>
+                </div>
+            </div>
         {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
+            Aucune série trouvée.
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 
     <button type="button" class="btn btn-lg round ml-5 mb-5">
-        <a href="{{ path('program_new') }}"> Créer </a>
+        <a href="{{ path('program_new') }}"> Créer une série</a>
     </button>
 {% endblock %}
