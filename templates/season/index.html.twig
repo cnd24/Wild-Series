@@ -4,15 +4,19 @@
 
 {% block body %}
     <h1 class="text-center">Index des saisons</h1>
-
+    <div class="text-center">
+        <button type="button" class="btn btn-lg round m-5">
+            <a href="{{ path('season_new') }}"> Créer une saison </a>
+        </button>
+    </div>
     <table class="table w-75 mx-auto">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Année</th>
-                <th>Description</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Année</th>
+            <th>Description</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for season in seasons %}
@@ -33,8 +37,6 @@
         </tbody>
     </table>
 
-    <button type="button" class="btn btn-lg round ml-5 mb-5">
-        <a href="{{ path('season_new') }}"> Créer </a>
-    </button>
+
 
 {% endblock %}

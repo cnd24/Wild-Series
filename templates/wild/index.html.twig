@@ -25,18 +25,4 @@
         {% endfor %}
     </div>
 
-
-    {{ form_start(form) }}
-    {{ form_row(form.name) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-    {{ form_end(form) }}
-
-
-
-
-    <button type="button" class="btn btn-lg round m-5">
-        <a href="{{ path('wild_index') }}"> Retour à l'accueil </a>
-    </button>
-
-
 {% endblock %}
