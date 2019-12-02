@@ -14,3 +14,5 @@ Vidéo quête 11 (formulaire) : https://drive.google.com/open?id=1uiIGNq7nkkj4Q0
 Vidéo quête 12 (CRUD) : https://drive.google.com/open?id=1sdENQJJGRiceFlDIHP07CCUZL0DkL7H0
 
 Video quête 13 (ManytoMany - Actor) : https://drive.google.com/open?id=1HykeZh-73QhMXBxguRAm35FIwV252Bmh
+
+Vidéo quête 14 (EntityType) : https://drive.google.com/open?id=1ZKMxecaE2XW7jsAxZOzNyA3-5Mvi7anq
