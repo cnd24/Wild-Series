@@ -16,3 +16,5 @@ Vidéo quête 12 (CRUD) : https://drive.google.com/open?id=1sdENQJJGRiceFlDIHP07
 Video quête 13 (ManytoMany - Actor) : https://drive.google.com/open?id=1HykeZh-73QhMXBxguRAm35FIwV252Bmh
 
 Vidéo quête 14 (EntityType) : https://drive.google.com/open?id=1ZKMxecaE2XW7jsAxZOzNyA3-5Mvi7anq
+
+Vidéo quête 15 (fixtures) : https://drive.google.com/open?id=1XjzLlQYsBTZWtMJJAu2_YwQ4KfyHOu2p
