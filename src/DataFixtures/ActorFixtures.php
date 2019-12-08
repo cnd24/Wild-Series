@@ -2,8 +2,6 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Program;
-use App\Entity\Category;
 use App\Entity\Actor;
 use App\Service\Slugify;
 use Faker;
