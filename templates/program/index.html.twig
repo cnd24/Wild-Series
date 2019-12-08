@@ -15,8 +15,8 @@
                 <div class="card text-center m-2">
                     <h4 class="card-header font-weight-bold ">{{ program.title }}</h4>
                     <div class="badges mt-2">
-                        <a class="badge badge-pill badge-secondary" href="{{ path('program_show', {'id': program.id}) }}">voir</a>
-                        <a class="badge badge-pill badge-secondary" href="{{ path('program_edit', {'id': program.id}) }}">modifier</a>
+                        <a class="badge badge-pill badge-secondary" href="{{ path('program_show', {'slug': program.slug}) }}">voir</a>
+                        <a class="badge badge-pill badge-secondary" href="{{ path('program_edit', {'slug': program.slug}) }}">modifier</a>
                     </div>
                     <img class="align-self-center mt-2 h-25 rounded" src="{{ program.poster }}"
                          alt="{{ program.title }}">
