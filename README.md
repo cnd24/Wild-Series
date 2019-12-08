@@ -18,3 +18,5 @@ Video quête 13 (ManytoMany - Actor) : https://drive.google.com/open?id=1HykeZh-
 Vidéo quête 14 (EntityType) : https://drive.google.com/open?id=1ZKMxecaE2XW7jsAxZOzNyA3-5Mvi7anq
 
 Vidéo quête 15 (fixtures) : https://drive.google.com/open?id=1XjzLlQYsBTZWtMJJAu2_YwQ4KfyHOu2p
+
+Vidéo quête 16 (services) : https://drive.google.com/open?id=15Q0gh7k1uk7OKmbXNqu4zDB_prGikj66
