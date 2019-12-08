@@ -20,7 +20,7 @@ class ActorController extends AbstractController
      * Getting a program with a formatted slug for title
      *
      * @param string $slug The slugger
-     * @Route("/actor/{slug<^[a-z0-9-]+$>}", defaults={"slug" = null}, name="show_actor")
+     * @Route("/actor/{slug}", defaults={"slug" = null}, name="show_actor")
      * @return Response
      */
     public function showByActor(?string $slug):Response
