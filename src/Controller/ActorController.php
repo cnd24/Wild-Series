@@ -9,6 +9,7 @@ use App\Entity\Episode;
 use App\Entity\Actor;
 use App\Form\ProgramSearchType;
 use App\Form\CategoryType;
+use App\Service\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,31 +24,24 @@ class ActorController extends AbstractController
      * @Route("/actor/{slug}", defaults={"slug" = null}, name="show_actor")
      * @return Response
      */
-    public function showByActor(?string $slug):Response
+    public function showByActor(Actor $actor, Slugify $slugify):Response
     {
-        if (!$slug) {
+        if (!$slugify) {
             throw $this
                 ->createNotFoundException('No slug has been sent to find a program in program\'s table.');
         }
-        $slug = preg_replace(
-            '/-/',
-            ' ', ucwords(trim(strip_tags($slug)), "-")
-        );
+
+        $actor->setSlug($slugify->generate($actor->getName()));
+
+
         $actor = $this->getDoctrine()
             ->getRepository(Actor::class)
-            ->findOneBy(['name' => mb_strtolower($slug)]);
+            ->findOneBy(['name' => $actor->getName()]);
 
         $programs = $actor->getPrograms();
 
-        if (!$actor) {
-            throw $this->createNotFoundException(
-                'No actor with '.$slug.' name, found in actor\'s table.'
-            );
-        }
-
         return $this->render('wild/actor.html.twig', [
             'actor' => $actor,
-            'slug'  => $slug,
             'programs' => $programs,
         ]);
     }
