@@ -38,7 +38,7 @@
         <a href="{{ path('program_index') }}">Retour à la liste</a>
     </button>
     <button type="button" class="btn btn-lg round m-5">
-        <a href="{{ path('program_edit', {'id': program.id}) }}">Modifier</a>
+        <a href="{{ path('program_edit', {'slug': program.slug}) }}">Modifier</a>
     </button>
 
     {{ include('program/_delete_form.html.twig') }}
