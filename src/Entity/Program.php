@@ -40,7 +40,7 @@ class Program
     private $category;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Season", mappedBy="program", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Season", mappedBy="program", cascade={"remove"})
      */
     private $seasons;
 
