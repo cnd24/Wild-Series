@@ -35,7 +35,7 @@ class Season
     private $program;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Episode", mappedBy="season", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Episode", mappedBy="season", cascade={"remove"})
      */
     private $episodes;
 
