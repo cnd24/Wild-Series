@@ -20,3 +20,5 @@ Vidéo quête 14 (EntityType) : https://drive.google.com/open?id=1ZKMxecaE2XW7js
 Vidéo quête 15 (fixtures) : https://drive.google.com/open?id=1XjzLlQYsBTZWtMJJAu2_YwQ4KfyHOu2p
 
 Vidéo quête 16 (services) : https://drive.google.com/open?id=15Q0gh7k1uk7OKmbXNqu4zDB_prGikj66
+
+Vidéo quête 17 (email) : https://drive.google.com/open?id=11GW_thAB7RTmQrz49cHdZtOuIjbV15od
