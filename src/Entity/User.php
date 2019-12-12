@@ -33,6 +33,11 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Comment", mappedBy="author", cascade={"persist", "remove"})
+     */
+    private $comment;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -109,5 +114,22 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getComment(): ?Comment
+    {
+        return $this->comment;
+    }
+
+    public function setComment(Comment $comment): self
+    {
+        $this->comment = $comment;
+
+        // set the owning side of the relation if necessary
+        if ($comment->getAuthor() !== $this) {
+            $comment->setAuthor($this);
+        }
+
+        return $this;
     }
 }
