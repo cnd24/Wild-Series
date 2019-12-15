@@ -2,12 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Program;
 use App\Entity\Category;
-use App\Entity\Season;
-use App\Entity\Episode;
-use App\Form\ProgramSearchType;
 use App\Form\CategoryType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +14,7 @@ class CategoryController extends AbstractController
 {
     /**
      * @Route("/category", name="category_add")
+     *  @IsGranted("ROLE_ADMIN")
      */
     public function add(Request $request): Response
     {
