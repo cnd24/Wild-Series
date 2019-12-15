@@ -24,3 +24,5 @@ Vidéo quête 16 (services) : https://drive.google.com/open?id=15Q0gh7k1uk7OKmbX
 Vidéo quête 17 (email) : https://drive.google.com/open?id=11GW_thAB7RTmQrz49cHdZtOuIjbV15od
 
 Vidéo quête 18(gestion users) : https://drive.google.com/open?id=1Evy9lRA14JCHn7nAusxeiPBi4VGTgqcE
+
+Vidéo quête 19(Sécurisons nos routes) : https://drive.google.com/open?id=1HzceD7Ka4I3Dd4q5qqeQjigtx4KZuSt6
