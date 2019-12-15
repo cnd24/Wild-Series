@@ -4,7 +4,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="{{ path('app_index') }}">Home</a>
-                {% if app.user %}
+                {% if is_granted('ROLE_ADMIN') %}
                     <a class="nav-item nav-link" href="{{ path('program_index') }}">Séries-admin</a>
                     <a class="nav-item nav-link" href="{{ path('season_index') }}">Saisons-admin</a>
                     <a class="nav-item nav-link" href="{{ path('episode_index') }}">Episodes-admin</a>
@@ -18,8 +18,6 @@
         <div class="text-align-right">
             <div class="navbar-nav">
             {% if app.user %}
-
-
                 <a href="{{ path('app_logout') }}" class="nav-item nav-link">
                     <h6>{{ app.user.email }} - Logout <i class="fas fa-user-alt-slash ml-3"></i></h6>
                 </a>

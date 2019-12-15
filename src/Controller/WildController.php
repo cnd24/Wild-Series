@@ -7,8 +7,8 @@ use App\Entity\Program;
 use App\Entity\Category;
 use App\Entity\Season;
 use App\Entity\Episode;
+use App\Entity\User;
 use App\Form\CommentType;
-use App\Form\ProgramSearchType;
 use App\Form\CategoryType;
 use App\Repository\CommentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -157,6 +157,7 @@ class WildController extends AbstractController
             'program' => $program,
             'comments' => $commentRepository->findBy(['episode' => $episode]),
             'form' => $form->createView(),
+            'user' => $this->getUser(),
         ]);
     }
 
