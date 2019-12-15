@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
-
+    {% block header %}
+        <div class="img-bg">
+            {% include 'navbar.html.twig' %}
+        </div>
+    {% endblock %}
 {% block body %}
     <h1>Bienvenue !</h1>
 

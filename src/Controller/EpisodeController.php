@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Entity\Episode;
+use App\Form\CommentType;
 use App\Form\EpisodeType;
 use App\Repository\EpisodeRepository;
 use App\Service\Slugify;
@@ -53,8 +55,9 @@ class EpisodeController extends AbstractController
     /**
      * @Route("/{slug}", name="episode_show", methods={"GET"})
      */
-    public function show(Episode $episode): Response
+    public function show(Episode $episode, Request $request): Response
     {
+
         return $this->render('episode/show.html.twig', [
             'episode' => $episode,
         ]);
