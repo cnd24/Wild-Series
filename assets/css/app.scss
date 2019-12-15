@@ -22,7 +22,7 @@ body {
   margin-right: 3rem;
 }
 
-h1, h4{
+h1, h4, h3{
   font-family: $title-font;
 }
 
@@ -59,6 +59,14 @@ h1, h4{
   }
 }
 
+.img-bg{
+  background-image: url("/build/sieges-rouges.jpg");
+  background-size: auto 100vh;
+  position: relative;
+  background-position: top left;
+  height: 100vh;
+}
+
 .round {
   border-radius: 24px;
 }
@@ -88,4 +96,17 @@ h1, h4{
 
 .secondary-color {
   color : $secondary-color;
+}
+
+i {
+  font-size: 20px;
+  color: $secondary-color;
+}
+
+.commentTitle{
+  border-bottom: 1px white solid;
+}
+
+form {
+  justify-content: center;
 }

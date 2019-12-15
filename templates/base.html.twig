@@ -12,9 +12,9 @@
         {% endblock %}
     </head>
     <body>
-    <header>
+    {% block header %}
         {% include 'navbar.html.twig' %}
-    </header>
+    {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

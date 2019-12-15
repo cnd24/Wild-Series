@@ -27,15 +27,15 @@ class Comment
     private $rate;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\User", inversedBy="comment", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $author;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Episode", inversedBy="comments")
      */
     private $episode;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="comments")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $author;
 
     public function getId(): ?int
     {
