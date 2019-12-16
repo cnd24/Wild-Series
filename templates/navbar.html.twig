@@ -19,11 +19,11 @@
             <div class="navbar-nav">
             {% if app.user %}
                 <a href="{{ path('app_logout') }}" class="nav-item nav-link">
-                    <h6>{{ app.user.email }} - Logout <i class="fas fa-user-alt-slash ml-3"></i></h6>
+                    <h6>{{ app.user.email }} - Se déconnecter <i class="fas fa-user-alt-slash ml-3"></i></h6>
                 </a>
                 {% else %}
                     <a href="{{ path('app_login') }}" class="nav-item nav-link">
-                        <h6> Login <i class="fas fa-user ml-2"></i></h6>
+                        <h6> Se connecter <i class="fas fa-user ml-2"></i></h6>
                     </a>
                 {% endif %}
             </div>
