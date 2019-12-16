@@ -26,3 +26,5 @@ Vidéo quête 17 (email) : https://drive.google.com/open?id=11GW_thAB7RTmQrz49cH
 Vidéo quête 18(gestion users) : https://drive.google.com/open?id=1Evy9lRA14JCHn7nAusxeiPBi4VGTgqcE
 
 Vidéo quête 19(Sécurisons nos routes) : https://drive.google.com/open?id=1HzceD7Ka4I3Dd4q5qqeQjigtx4KZuSt6
+
+Vidéo quête 20( Inscription d’un utilisateur): https://drive.google.com/open?id=1o7qpfFoCYSYToINcpOt06NlpaBMTWIBB
