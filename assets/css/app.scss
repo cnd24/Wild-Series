@@ -22,14 +22,15 @@ body {
   margin-right: 3rem;
 }
 
-h1, h4, h3{
+h1, h4, h3 {
   font-family: $title-font;
 }
 
 .navbar {
   background-color: transparent;
   width: 100%;
-  a:hover{
+
+  a:hover {
     color: white;
     text-decoration: none;
   }
@@ -50,16 +51,18 @@ h1, h4, h3{
   border-radius: 6px;
   border: none;
   color: white;
+
   a {
     color: white;
   }
+
   a:hover {
     text-decoration: none;
     color: white;
   }
 }
 
-.img-bg{
+.img-bg {
   background-image: url("/build/advenger.jpg");
   background-size: 100vw 100vh;
   position: relative;
@@ -95,7 +98,7 @@ h1, h4, h3{
 }
 
 .secondary-color {
-  color : $secondary-color;
+  color: $secondary-color;
 }
 
 i {
@@ -103,10 +106,111 @@ i {
   color: $secondary-color;
 }
 
-.commentTitle{
+.commentTitle {
   border-bottom: 1px white solid;
 }
 
 form {
   justify-content: center;
 }
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600);
+.cardWild {
+  font-family: 'Roboto', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #141414;
+  text-align: left;
+  line-height: 1.4em;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 15px #002322;
+
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+  }
+
+  img {
+    max-width: 100%;
+    vertical-align: top;
+    opacity: 0.85;
+  }
+
+  figcaption {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 25px;
+    position: relative;
+  }
+
+  figcaption:before {
+    position: absolute;
+    content: '';
+    bottom: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 55px 0 0 400px;
+    border-color: transparent transparent transparent #ffffff;
+  }
+
+  figcaption a {
+    padding: 5px;
+    border: 1px solid #141414;
+    color: #141414;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    margin: 10px 0;
+    display: inline-block;
+    opacity: 0.65;
+    width: 47%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .profile {
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%;
+    left: 25px;
+    z-index: 1;
+    max-width: 90px;
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  h2 {
+    margin: 0 0 5px;
+    font-weight: 300;
+    font-size: 20pt;
+  }
+
+  h2 span {
+    display: block;
+    font-size: 0.8em;
+    color: #2980b9;
+  }
+
+  p {
+    margin: 0 0 10px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
+
+}
+
+
+.cardWild figcaption a:hover {
+  opacity: 1;
+}
+
