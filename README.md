@@ -28,3 +28,5 @@ Vidéo quête 18(gestion users) : https://drive.google.com/open?id=1Evy9lRA14JCH
 Vidéo quête 19(Sécurisons nos routes) : https://drive.google.com/open?id=1HzceD7Ka4I3Dd4q5qqeQjigtx4KZuSt6
 
 Vidéo quête 20( Inscription d’un utilisateur): https://drive.google.com/open?id=1o7qpfFoCYSYToINcpOt06NlpaBMTWIBB
+
+Vidéo quête 21(validation) : https://drive.google.com/open?id=1i2OvUfxvTMrKK1-zNKlgrPj31byma2tY
