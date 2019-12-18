@@ -10,7 +10,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProgramRepository")
- * @UniqueEntity("title", message="Ce titre existe déjà.")
+ * @UniqueEntity(fields={"title"}, message="Ce titre existe déjà.")
  */
 class Program
 {
@@ -22,9 +22,9 @@ class Program
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Le title doit être renseigné")
-     * @Assert\Length(max="255", maxMessage="Le titre saisi {{ value }} est trop long, il ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\Length(max="255", maxMessage="Le titre saisi est trop long, il ne devrait pas dépasser {{ limit }} caractères")
      */
     private $title;
 
@@ -81,7 +81,7 @@ class Program
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 
@@ -93,7 +93,7 @@ class Program
         return $this->summary;
     }
 
-    public function setSummary(string $summary): self
+    public function setSummary(?string $summary): self
     {
         $this->summary = $summary;
 
