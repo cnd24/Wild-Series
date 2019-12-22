@@ -11,6 +11,7 @@ use App\Entity\User;
 use App\Form\CommentType;
 use App\Form\CategoryType;
 use App\Repository\CommentRepository;
+use App\Repository\ProgramRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,7 +22,7 @@ class WildController extends AbstractController
     /**
      * @Route("/wild", name="wild_index")
      */
-    public function index(Request $request) :Response
+    public function index(Request $request, ProgramRepository $programRepository) :Response
     {
         $programs = $this->getDoctrine()->getRepository(Program::class)->findAll();
 
@@ -42,7 +43,7 @@ class WildController extends AbstractController
         }
 
         return $this->render('wild/index.html.twig', [
-            'programs' => $programs,
+            'programs' => $programRepository->findAllWithCategoriesAndActor(),
             'form' => $form->createView(),
         ]);
     }

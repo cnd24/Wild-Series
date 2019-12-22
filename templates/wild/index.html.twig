@@ -18,6 +18,14 @@
                         <p>Catégorie : {{ program.category.name }}</p>
                         <p class="card-text">{{ program.summary }}</p>
                     </div>
+                    <div class="card-body">
+                        <p>Acteurs :</p>
+                        {% for actor in program.actors %}
+                        {{actor.name}},
+                            {% else %}
+                            <p> Aucun acteur présent dans la série</p>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         {% else %}
