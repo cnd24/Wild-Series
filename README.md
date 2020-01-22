@@ -30,3 +30,5 @@ Vidéo quête 19(Sécurisons nos routes) : https://drive.google.com/open?id=1Hzc
 Vidéo quête 20( Inscription d’un utilisateur): https://drive.google.com/open?id=1o7qpfFoCYSYToINcpOt06NlpaBMTWIBB
 
 Vidéo quête 21(validation) : https://drive.google.com/open?id=1i2OvUfxvTMrKK1-zNKlgrPj31byma2tY
+
+Vidéo quête 23(messages flash) : https://drive.google.com/open?id=1B-qBYAej6wcBrhnR7OrVv-kZcQsMNL9j
